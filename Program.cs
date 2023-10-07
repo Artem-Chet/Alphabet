@@ -1,4 +1,4 @@
-﻿using System.CommandLine;
+using System.CommandLine;
 using System.Text;
 
 namespace Alphabet;
@@ -61,6 +61,6 @@ internal class Program
         }
 
         var gameTime = DateTime.UtcNow - gameStart;
-        Console.WriteLine($"✅ Done. {wins}/26 Total time: {gameTime}");
+        Console.WriteLine($"✅ Done. {wins}/26 Total time: {gameTime.TotalSeconds:0.0}s");
     }
 }
