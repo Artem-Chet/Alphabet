@@ -1,4 +1,4 @@
-using System.CommandLine;
+﻿using System.CommandLine;
 using System.Text;
 
 namespace Alphabet;
@@ -40,13 +40,14 @@ internal class Program
             // Blue and bold
             Console.Write($"#{(x + 1):00} of {shuffledLetters.Length:00}. Which letter is \x1b[1;34m{shuffledLetters[x],2:##}\x1b[0m: ");
 
-            var input = Console.ReadLine();
+            var input = Console.ReadKey().KeyChar;
+            Console.WriteLine();
 
             var guessTime = DateTime.UtcNow - guessStart;
 
             // Green
             string isCorrectString = "👍 \x1b[32mCorrect!\x1b[0m";
-            if (input?.Trim().ToLower().FirstOrDefault() == answer)
+            if (input.ToString().ToLower().FirstOrDefault() == answer)
             {
                 wins++;
             }
