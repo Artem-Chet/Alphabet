@@ -7,7 +7,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.OutputEncoding = Encoding.Unicode;
+        Console.OutputEncoding = Encoding.UTF8;
         var rootCommand = new RootCommand("number of letter game");
 
         rootCommand.SetHandler(handler => { Challenge(); });
